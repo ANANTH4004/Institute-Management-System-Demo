@@ -1,0 +1,26 @@
+Create Database InstituteManagementSystem(IMS)
+from Sulakshana Deore to All Participants:
+CREATE TABLE "COURSE" 
+   (    "COURSEID" int, 
+    "COURSENAME" VARCHAR(20), 
+    "DEPTID" VARCHAR(4), 
+    "DURATION" int
+   )
+   Create table student
+(
+stuid int primary key,
+name varchar(40),
+crsid int foreign key references course(courseid)
+)
+
+create table Exam
+(examid int primary key,
+crsid int foreign key references course(courseid),
+studid int foreign key references student(studid),
+marks int
+)
+
+1) Using the database Make CRUD operations on the Course and the student table.
+2) Student appears for the exam with 10 questions.
+All correct answers must be counted as 1 mark per question.
+After counting the marks at the end of the exam, insert the marks with the examid,crsid,studid.
