@@ -1,0 +1,38 @@
+create database Institute
+use Institute
+
+CREATE TABLE Course 
+   (    courseId int primary key, 
+     courseName VARCHAR(20), 
+    deptId VARCHAR(4), 
+    duration int
+   )
+   insert into Course values (1,'C++','CSE',45)
+   insert into Course values (2,'C#','IT',60)
+   insert into Course values (3,'Java','ECE',30)
+  Create table student
+(
+stuId int primary key,
+stuName varchar(40),
+courseId int foreign key references course(courseId)
+)
+insert into student values(4001,'Agilan',1)
+insert into student values(4002,'Karthik',2)
+insert into student values(4003,'SK',3)
+insert into student values(4004,'Anand',2)
+insert into student values(4005,'Varun',1)
+
+create table Exam
+(
+[No] int IDENTITY(1,1) primary key ,
+examId int,
+courseId int foreign key references course(courseId),
+stuId int foreign key references student(stuId),
+marks int
+)
+drop table Exam
+
+insert into Exam values (123,2,4004,10)
+
+
+
